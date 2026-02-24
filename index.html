@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>114學年度校內資訊比賽報名系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif;
+               background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); min-height: 100vh; }
+        .bg-circle { position: fixed; border-radius: 50%; background: rgba(255, 255, 255, 0.1); z-index: -1; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .rule-card { border-left: 4px solid #4f46e5; transition: 0.3s; }
+        .admin-login-box { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100; }
+    </style>
+</head>
+<body class="py-8 px-4">
+
+<div class="bg-circle w-64 h-64 -top-20 -left-20"></div>
+<div class="bg-circle w-96 h-96 -bottom-32 -right-32"></div>
+
+<div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10 text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-2xl">🏆 校內資訊比賽報名平台</h1>
+        <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm backdrop-blur-sm italic text-shadow">報名時間為4月20日(一)~5月4日(一)；各項限額 35 人</div>
+        <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm backdrop-blur-sm italic text-shadow">比賽時間為5月11日(一)~5月15日(五)</div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <div class="lg:col-span-5 h-full">
+            <div class="glass p-8 rounded-3xl shadow-2xl flex flex-col h-full">
+                <h2 class="text-2xl font-bold text-indigo-800 mb-6 flex items-center border-b pb-2">📋 比賽辦法摘要</h2>
+                <div class="space-y-4 overflow-y-auto max-h-[550px] pr-2 text-sm text-gray-700">
+                    <div class="rule-card p-4 bg-indigo-50/50 rounded-r-xl">
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">9年級、12年級及體育班學生採自由報名方式</h3>
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">高中資訊比賽採合併年級採計得獎名次</h3>
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">⌨️ 中英文文章輸入</h3>
+                        <p>• 7-8、10-11年級：每班至少 1 人報名</p>
+                        <p>• 雙語/國際班：需報名英文輸入，每班至少2人報名</p>
+                        <p>• 文章輸入為實體比賽，於之後公告比賽教室</p>
+                    </div>
+                    <div class="rule-card p-4 bg-indigo-50/50 rounded-r-xl">
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">📊 電腦簡報設計</h3>
+                        <p>• 7-8、10-11年級：每班至少 1 人報名</p>
+                        <p>• 比賽作品需於 5/22(五) 前上傳，請用學校帳號登入</p>
+                        <p>• 檔案格式：pptx or pdf檔</p>
+                        <p class="break-all">• 上傳雲端連結：<a href="https://forms.gle/uWQTXjMgnoZugiJr7" target="_blank" class="text-indigo-600 hover:underline">點此開啟連結</a></p>
+                    </div>
+                    <div class="rule-card p-4 bg-indigo-50/50 rounded-r-xl">
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">🖊️ 電腦專題寫作</h3>
+                        <p>• 7-8、10-11年級：每班至少 1 人報名</p>  
+                        <p>• 檔案格式：pdf檔</p>
+                        <p>• 比賽作品需於 5/22(五) 前上傳，請用學校帳號登入</p>
+                        <p class="break-all">• 上傳雲端連結：<a href="https://forms.gle/uWQTXjMgnoZugiJr7" target="_blank" class="text-indigo-600 hover:underline">點此開啟連結</a></p>
+                    </div>
+                    <div class="rule-card p-4 bg-indigo-50/50 rounded-r-xl">
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">💻 電腦程式設計</h3>
+                        <p>• 7-8年級每班至少 1 人報名</p>
+                        <p>• 10-11年級每班至多 2 人報名</p>
+                        <p>• 程式設計為實體比賽，於之後公告比賽教室</p>
+                    </div>
+                    <div class="rule-card p-4 bg-indigo-50/50 rounded-r-xl">
+                        <h3 class="font-bold text-indigo-700 text-base mb-1">🏳️‍🌈 電繪海報設計</h3>
+                        <p>• 7-8年級美術班以班級為單位參賽，無需報名</p>
+                        <p>• 檔案格式：jpg or png檔</p>
+                        <p>• 比賽作品由資訊課老師統一於 5/22(五) 前上傳</p>
+                    </div>
+                </div>
+
+                <div id="downloadArea" class="hidden mt-6 border-t pt-4">
+                    <a id="fileLink" href="#" target="_blank" class="flex items-center justify-center w-full bg-indigo-600 text-white py-3 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 transition">
+                        <span>📥</span> 下載完整比賽辦法附件
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-7">
+            <div class="glass p-8 rounded-3xl shadow-2xl">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center border-b pb-2">✍️ 填寫報名資訊</h2>
+                <form id="registrationForm" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-600 mb-2">選擇班級</label>
+                            <select id="classInput" required class="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-indigo-500 transition outline-none bg-white">
+                                <option value="" disabled selected>請選擇班級</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-600 mb-2">座號</label>
+                            <input type="number" id="seatInput" min="1" max="45" required class="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-indigo-500 outline-none" placeholder="1-45">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-600 mb-2">學生姓名</label>
+                        <input type="text" id="nameInput" required class="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-indigo-500 outline-none" placeholder="請輸入全名">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-600 mb-2">報名項目</label>
+                        <select id="eventInput" required class="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-indigo-500 transition outline-none bg-white">
+                            <option value="" disabled selected>請選擇項目</option>
+                            <option value="中文文章輸入">中文文章輸入</option>
+                            <option value="英文文章輸入">英文文章輸入</option>
+                            <option value="電腦簡報設計">電腦簡報設計</option>
+                            <option value="電腦專題寫作">電腦專題寫作</option>
+                            <option value="電腦程式設計">電腦程式設計</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submitBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-xl transition active:scale-95 text-lg">
+                        確認並提交報名
+                    </button>
+                </form>
+                
+                <div class="mt-8 text-center border-t pt-4">
+                    <button onclick="showLoginBox()" class="text-xs text-gray-400 hover:text-indigo-600 transition">⚙️ 管理入口</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginBox" class="admin-login-box glass p-8 rounded-3xl shadow-2xl w-80 text-center">
+        <h3 class="font-bold text-gray-800 mb-4 text-lg">🔐 管理驗證</h3>
+        <input type="password" id="pwField" placeholder="請輸入密碼" class="w-full px-4 py-2 border rounded-lg mb-4 text-center outline-none">
+        <div class="flex gap-2">
+            <button onclick="hideLoginBox()" class="flex-1 px-4 py-2 bg-gray-200 rounded-lg text-sm font-bold">取消</button>
+            <button onclick="checkPassword()" class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-bold">登入</button>
+        </div>
+    </div>
+
+    <div id="adminSection" class="hidden mt-12 glass p-10 rounded-3xl shadow-2xl border-2 border-indigo-200">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 flex justify-between items-center">
+            <span>📊 賽事管理中心</span>
+            <button onclick="location.reload()" class="text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">安全登出</button>
+        </h2>
+        
+        <div class="bg-indigo-50 p-6 rounded-2xl mb-10 border border-indigo-100">
+            <h4 class="font-bold text-indigo-800 mb-3 font-bold">📁 上傳/更新比賽辦法附件</h4>
+            <div class="flex flex-wrap items-center gap-4">
+                <input type="file" id="adminFile" class="text-sm text-gray-500">
+                <button onclick="handleFileUpload()" id="uploadBtn" class="bg-indigo-600 text-white px-6 py-2 rounded-xl font-bold">上傳檔案</button>
+            </div>
+            <p id="uploadStatus" class="text-xs mt-2 text-indigo-400"></p>
+        </div>
+
+        <div id="eventStatsBody" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"></div>
+        <div class="overflow-x-auto rounded-2xl border bg-white shadow-sm mb-8">
+            <table class="w-full text-left text-sm">
+                <thead class="bg-gray-800 text-white">
+                    <tr><th class="px-6 py-4">班級</th><th class="px-6 py-4">座號</th><th class="px-6 py-4">姓名</th><th class="px-6 py-4">項目</th><th class="px-6 py-4">操作</th></tr>
+                </thead>
+                <tbody id="detailListBody" class="divide-y divide-gray-100"></tbody>
+            </table>
+        </div>
+        <button onclick="exportToCSV()" class="bg-green-600 text-white px-6 py-2 rounded-lg font-bold">匯出 Excel</button>
+    </div>
+</div>
+
+<script>
+    // 使用 Base64 編碼隱藏密碼字串
+    const SECRET_KEY = "YWRtaW44ODg=";
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbw_gE3ED4tpQP9Fjd_rCFvn_OkZoDpJFuYJH-FQCg1Cj_n_e65Nnjl9pjZp_mrnOQ9O/exec"; 
+    const MAX_LIMIT = 35;
+    const events = ["中文文章輸入", "英文文章輸入", "電腦簡報設計", "專題寫作", "電腦程式設計", "電繪海報設計"];
+
+    window.addEventListener('load', async () => {
+        const classSelect = document.getElementById('classInput');
+        // 7-9 年級：10 班
+        for (let g = 7; g <= 9; g++) { 
+            for (let r = 1; r <= 10; r++) { 
+                const opt = document.createElement('option'); 
+                opt.value = `${g}-${r}`; opt.innerText = `${g}-${r} 班`; 
+                classSelect.appendChild(opt); 
+            } 
+        }
+        // 10-12 年級：7 班
+        for (let g = 10; g <= 12; g++) { 
+            for (let r = 1; r <= 7; r++) { 
+                const opt = document.createElement('option'); 
+                opt.value = `${g}-${r}`; opt.innerText = `${g}-${r} 班`; 
+                classSelect.appendChild(opt); 
+            } 
+        }
+
+        if (GAS_URL.includes("https")) {
+            try {
+                const response = await fetch(GAS_URL);
+                const data = await response.json();
+                if (data.fileUrl) {
+                    document.getElementById('downloadArea').classList.remove('hidden');
+                    document.getElementById('fileLink').href = data.fileUrl;
+                }
+            } catch (e) { console.log("無附件"); }
+        }
+        updateDashboard();
+    });
+
+    let registrations = JSON.parse(localStorage.getItem('registrations')) || [];
+
+    function showLoginBox() { document.getElementById('loginBox').style.display = 'block'; document.getElementById('pwField').focus(); }
+    function hideLoginBox() { document.getElementById('loginBox').style.display = 'none'; document.getElementById('pwField').value = ''; }
+    
+    function checkPassword() {
+        const inputVal = document.getElementById('pwField').value.trim();
+        // 修改密碼驗證邏輯：比對 Base64 編碼
+        if (btoa(inputVal) === SECRET_KEY) {
+            hideLoginBox();
+            document.getElementById('adminSection').classList.remove('hidden');
+            updateDashboard();
+        } else { alert("密碼錯誤"); }
+    }
+
+    document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const event = document.getElementById('eventInput').value;
+        const currentCount = registrations.filter(r => r.event === event).length;
+        if (currentCount >= MAX_LIMIT) return alert(`⚠️ 名額已滿！`);
+
+        const formData = {
+            className: document.getElementById('classInput').value,
+            seat: document.getElementById('seatInput').value,
+            name: document.getElementById('nameInput').value,
+            event: event
+        };
+
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "🚀 同步中..."; btn.disabled = true;
+
+        try {
+            await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify(formData) });
+            registrations.push({ ...formData, id: Date.now() });
+            localStorage.setItem('registrations', JSON.stringify(registrations));
+            alert("✅ 報名成功！");
+            e.target.reset(); updateDashboard();
+        } catch (err) { alert("報名成功(暫存本機)。"); }
+        finally { btn.innerText = "確認並提交報名"; btn.disabled = false; }
+    });
+
+    async function handleFileUpload() {
+        const fileInput = document.getElementById('adminFile');
+        const status = document.getElementById('uploadStatus');
+        const btn = document.getElementById('uploadBtn');
+        if (fileInput.files.length === 0) return alert("請先選取檔案");
+        
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        btn.disabled = true; status.innerText = "⏳ 處理中...";
+        reader.onload = async function(e) {
+            const base64 = e.target.result.split(',')[1];
+            try {
+                await fetch(GAS_URL, {
+                    method: "POST",
+                    body: JSON.stringify({ action: "uploadFile", base64: base64, type: file.type, name: file.name })
+                });
+                alert("✅ 附件已更新！"); location.reload();
+            } catch (err) { alert("上傳失敗"); } finally { btn.disabled = false; }
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function updateDashboard() {
+        const detailBody = document.getElementById('detailListBody');
+        const eventStatsBody = document.getElementById('eventStatsBody');
+        detailBody.innerHTML = registrations.sort((a,b) => a.className.localeCompare(b.className, undefined, {numeric: true}))
+            .map(r => `<tr class="hover:bg-gray-50"><td class="px-6 py-4 font-bold text-indigo-900">${r.className}</td><td class="px-6 py-4">${r.seat}</td><td class="px-6 py-4 font-medium">${r.name}</td><td class="px-6 py-4 text-xs font-bold text-indigo-600">${r.event}</td><td class="px-6 py-4"><button onclick="deleteRecord(${r.id})" class="text-red-400 font-bold text-xs">刪除</button></td></tr>`).join('');
+        
+        eventStatsBody.innerHTML = events.map(evt => {
+            const count = registrations.filter(r => r.event === evt).length;
+            const percent = Math.min((count / MAX_LIMIT) * 100, 100);
+            return `<div class="bg-white p-4 rounded-xl border shadow-sm transition hover:shadow-md">
+                <div class="flex justify-between mb-2 text-sm font-bold"><span>${evt}</span><span>${count}/${MAX_LIMIT}</span></div>
+                <div class="w-full bg-gray-100 h-1.5 rounded-full"><div class="bg-indigo-600 h-1.5 rounded-full" style="width:${percent}%"></div></div>
+            </div>`;
+        }).join('');
+    }
+    function deleteRecord(id) { if(confirm("確定刪除？")) { registrations = registrations.filter(r => r.id !== id); localStorage.setItem('registrations', JSON.stringify(registrations)); updateDashboard(); } }
+    function exportToCSV() {
+        let csv = "\ufeff班級,座號,姓名,項目\n" + registrations.map(r => `${r.className},${r.seat},${r.name},${r.event}`).join("\n");
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `名單.csv`; a.click();
+    }
+</script>
+</body>
+</html>
